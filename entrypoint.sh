@@ -8,7 +8,7 @@ echo "$KUBE_CONFIG_DATA" | base64 -d >/tmp/config
 export KUBECONFIG=/tmp/config
 
 if [ -z ${FILE_CONFIG_DATA+x} ]; then
-    echo "$FILE_CONFIG_DATA" | base64 -d >/tmp/file
+    cat "$FILE_CONFIG_DATA"  >/tmp/file
 fi
 
 if [ -z ${KUBECTL_VERSION+x} ]; then

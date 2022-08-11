@@ -9,7 +9,8 @@ export KUBECONFIG=/tmp/config
 
 if [ -z ${FILE_CONFIG_DATA+x} ]; then
     echo "$FILE_CONFIG_DATA" | base64 -d >/tmp/file
-    export FILE=/tmp/file
+else
+    echo "No file config data provided"
 fi
 
 if [ -z ${KUBECTL_VERSION+x} ]; then

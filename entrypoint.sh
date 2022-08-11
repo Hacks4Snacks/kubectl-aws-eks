@@ -4,6 +4,8 @@ set -e
 
 # Extract the base64 encoded config data and write this to the KUBECONFIG
 echo "$KUBE_CONFIG_DATA" | base64 -d > /tmp/config
+echo "$FILE_CONFIG_DATA" > /tmp/file
+
 export KUBECONFIG=/tmp/config
 
 if [ -z ${KUBECTL_VERSION+x} ] ; then
